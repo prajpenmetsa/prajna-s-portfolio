@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        * {
+            position: relative;
+        }
+        body {
+            background: linear-gradient(to bottom, #CAE9FF, #85C2FF);
+        }
+        nav {
+            background-color: #5FA8D3;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            font-size: 30px;
+            color: black;
+            background-color: #5FA8D3;
+            padding: 10px;
+            margin: 0px 15px;
+            text-decoration: none;
+        }
+        .button {
+            position: relative;
+            left: 10px;
+            font-size: 20px;
+            color: black;
+            background-color: white;
+            text-decoration: none;
+            bottom: 0;
+        }
+        .aboutdiv {
+            position: relative;
+            left: 20px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 75%;
+            align-items: center;
+        }
+        .abouthead {
+            position: relative;
+            left: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 100px;
+            color: #1B4965;
+            animation: fadeIn 1s ease;
+        }
+        .about {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 22px;
+            line-height: 1.6;
+            color: #1B4965;
+        }
+        html[theme="dark-mode"] {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        .toggle {
+            width: 70px;
+            height: 50px;
+        }
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; transform: translateY(-20px); 
+            }
+            to { 
+                opacity: 1; transform: translateY(0); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="educ.html">Educational Background</a>
+        <a href="ach.html">Achievements</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html">Blog</a>
+        <button onclick="toggleDarkMode()"><img src="toggle.png" class="toggle"></button>
+    </nav>
+    <h1 class = abouthead>About Me!</h1>
+    <div class = aboutdiv>
+        <p class = "about">Hey! I'm Prajna Penmetsa, and I am currently a first year student of Computer Science and Computational Linguistics at IIIT Hyderabad.
+            <br><br>
+            I was born in Andra Pradesh, but have lived majorily in the suburbs of Chicago for most of my life. I love my family and friends, and enjoy
+            spending time with them whenever possible. 
+            In my free time (basically non-existent in iiit but we make it work), I like to hang out with friends, 
+            play basketball, and watch YouTube. 
+            I have always been a very active individual and love playing sports, especially running. I also love to
+            sing and dance.
+            I feel grateful to be in the academically rigorous college that is IIIT Hyderabad because I get to surround myself with intelligent and 
+            hardworking individuals, who help me become a better version of myself.
+        </p>
+    </div>
+    <br><br>
+    <a class = "button" href = "index.html">Home</a>
+    <script>
+        function toggleDarkMode() {
+            const htmlElem = document.documentElement;
+            const bodyElem = document.body;
+            const currTheme = htmlElem.getAttribute('theme') || '';
+
+            if (currTheme === 'dark-mode') {
+                htmlElem.removeAttribute('theme');
+                bodyElem.classList.remove("dark-mode");
+            } else {
+                htmlElem.setAttribute('theme', 'dark-mode');
+                bodyElem.classList.add("dark-mode");
+            }
+        }
+    </script>
+</body>
+</html>

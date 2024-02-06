@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        * {
+            position: relative;
+        }
+        body {
+            background: linear-gradient(to bottom, #CAE9FF, #85C2FF);
+        }
+        nav {
+            background-color: #5FA8D3;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            font-size: 30px;
+            color: black;
+            background-color: #5FA8D3;
+            padding: 10px;
+            margin: 0px 15px;
+            text-decoration: none;
+        }
+
+        .aboutmore {
+            position: relative;
+            top: -60px;
+            left: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 150px;
+            color: #5FA8D3;
+            animation: fadeIn 1s ease
+        }
+        .prajpic {
+            position: relative;
+            width: 500px;
+            top: -50px;
+            animation: fadeIn 1s ease
+        }
+        .dark-mode .prajpic {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .flex-container2 {
+            position: relative;
+            top: 50px;
+            left: 65%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+        }
+        .resume {
+            margin-left: 40px;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+        html[theme="dark-mode"] {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        .toggle {
+            width: 70px;
+            height: 50px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="about.html">About Me</a>
+        <a href="educ.html">Educational Background</a>
+        <a href="ach.html">Achievements</a>
+        <a href="skills.html">Skills</a>
+        <a href="blog.html">Blog</a>
+        <button onclick="toggleDarkMode()"><img src="toggle.png" class="toggle"></button>
+    </nav>
+
+    <div class="flex-container2">
+        <p>Click on my photo to access resume</a>
+        <a href="https://www.instagram.com/prajna_penmetsa/"><img src="instagram.webp" class="icon"></a>
+        <a href="https://www.youtube.com/@prajnapenmetsa9526"><img src="youtube.png" class="icon"></a>
+        <a href="mailto:prajnapenmetsa@gmail.com"><img src="email.jpg" class="icon"></a>
+    </div>
+    <div class="flex-container">
+        <p class="aboutmore">Welcome to Prajna Penmetsa's website. Enjoy!</p>
+        <a href="https://drive.google.com/file/d/1H_o9HBD1czETxM8k_5mrW3iiPMy3iCOw/view?usp=sharing" target="_blank" class="resume"><img src="IMG_2461.JPG" alt="picture of Prajna" class="prajpic"></a>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            const htmlElem = document.documentElement;
+            const bodyElem = document.body;
+            const currTheme = htmlElem.getAttribute('theme') || '';
+
+            if (currTheme === 'dark-mode') {
+                htmlElem.removeAttribute('theme');
+                bodyElem.classList.remove("dark-mode");
+            } else {
+                htmlElem.setAttribute('theme', 'dark-mode');
+                bodyElem.classList.add("dark-mode");
+            }
+        }
+    </script>
+</body>
+
+</html>
